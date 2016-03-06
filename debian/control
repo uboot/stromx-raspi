@@ -1,0 +1,19 @@
+Source: stromx-raspi
+Priority: extra
+Maintainer: Matthias Fuchs <stromx-devel@googlegroups.com>
+Build-Depends: debhelper (>= 7.0.50~), cmake, cdbs, libstromx-dev, libraspberrypi-dev, libcppunit-dev
+Standards-Version: 3.9.1
+Section: libs
+Homepage: http://www.stromx.org
+
+Package: libstromx-raspi
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Stromx operators for Raspberry Pi camera and GPIOs
+
+Package: libstromx-raspi-dev
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, libstromx-opencv (= ${binary:Version})
+Description: Development files for stromx-raspi
