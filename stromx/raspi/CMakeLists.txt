@@ -10,6 +10,7 @@ configure_file (
 include_directories (
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_BINARY_DIR}
+    ${Boost_INCLUDE_DIRS}
     /opt/vc/include
     /opt/vc/include/interface/vcos/pthreads
     /opt/vc/include/interface/vmcs_host/linux
@@ -41,6 +42,8 @@ set_target_properties (stromx_raspi PROPERTIES
 target_link_libraries (stromx_raspi
     stromx_runtime
     stromx_cvsupport
+    ${Boost_LIBRARIES}
+    ${CMAKE_THREAD_LIBS_INIT}
     vcos
     mmal_core
     mmal_util

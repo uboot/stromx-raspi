@@ -51,6 +51,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
 endif(CMAKE_BUILD_TYPE STREQUAL "Debug")
 
 find_package(stromx REQUIRED)
+find_package(Boost 1.50.0 REQUIRED COMPONENTS thread)
 find_path(mmal_DIR "interface/mmal/mmal.h" HINTS /opt/vc/include)
 if (mmal_DIR)
     option(BUILD_RASPI "Build raspi package" ON)

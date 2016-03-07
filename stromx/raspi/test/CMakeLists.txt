@@ -32,6 +32,8 @@ set_target_properties(stromx_raspi_test PROPERTIES
 target_link_libraries(stromx_raspi_test 
     ${CPPUNIT_LIBRARY}
     ${CMAKE_DL_LIBS}
+    ${Boost_LIBRARIES}
+    ${CMAKE_THREAD_LIBS_INIT}
     stromx_runtime
     stromx_cvsupport
     vcos
