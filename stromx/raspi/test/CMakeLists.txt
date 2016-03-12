@@ -17,12 +17,12 @@ add_executable(stromx_raspi_test
     ../WriteGpio.cpp
     ../impl/Gpio.cpp
     ../impl/Utilities.cpp
-    GpioTriggerTest.cpp
+    #GpioTriggerTest.cpp
     main.cpp
     RaspiCamTest.cpp
     RaspiStillCamTest.cpp
-    ReadGpioTest.cpp
-    WriteGpioTest.cpp
+    #ReadGpioTest.cpp
+    #WriteGpioTest.cpp
 )
 
 set_target_properties(stromx_raspi_test PROPERTIES
