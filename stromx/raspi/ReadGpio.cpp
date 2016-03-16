@@ -21,6 +21,7 @@
 #include <stromx/runtime/EnumParameter.h>
 #include <stromx/runtime/Id2DataPair.h>
 #include <stromx/runtime/OperatorException.h>
+#include <stromx/runtime/Variant.h>
 #include "stromx/raspi/impl/Gpio.h"
 #include "stromx/raspi/impl/Utilities.h"
 

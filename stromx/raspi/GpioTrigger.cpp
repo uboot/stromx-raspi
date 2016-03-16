@@ -25,6 +25,7 @@
 #include <stromx/runtime/NumericParameter.h>
 #include <stromx/runtime/OperatorException.h>
 #include <stromx/runtime/TriggerData.h>
+#include <stromx/runtime/Variant.h>
 #include "stromx/raspi/impl/Gpio.h"
 #include "stromx/raspi/impl/Utilities.h"
 

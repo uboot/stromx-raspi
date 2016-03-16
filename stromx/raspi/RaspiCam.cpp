@@ -30,6 +30,7 @@
 #include <stromx/runtime/DataProvider.h>
 #include <stromx/runtime/Id2DataPair.h>
 #include <stromx/runtime/OperatorException.h>
+#include <stromx/runtime/Variant.h>
 
 #define MMAL_CAMERA_VIDEO_PORT 1
 #define MMAL_CAMERA_CAPTURE_PORT 2
