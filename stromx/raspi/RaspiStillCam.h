@@ -22,6 +22,8 @@
 #include <stromx/runtime/OperatorKernel.h>
 #include <stromx/runtime/RecycleAccess.h>
 
+#include "stromx/raspi/Config.h"
+
 class MMAL_COMPONENT_T;
 class MMAL_CONNECTION_T;
 class MMAL_PORT_T;
