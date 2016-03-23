@@ -27,4 +27,24 @@
 #define STROMX_RASPI_PACKAGE_NAME "raspi"
 #define STROMX_RASPI_API
 
+
+#ifdef WIN32
+    #define STROMX_RASPI_HELPER_DLL_IMPORT __declspec(dllimport)
+    #define STROMX_RASPI_HELPER_DLL_EXPORT __declspec(dllexport)
+#else
+    #define STROMX_RASPI_HELPER_DLL_IMPORT
+    #define STROMX_RASPI_HELPER_DLL_EXPORT __attribute__ ((visibility ("default")))
+#endif // WIN32
+
+#ifdef STROMX_RASPI_STATIC
+    #define STROMX_RASPI_API
+#else // STROMX_RASPI_STATIC
+    #ifdef stromx_raspi_EXPORTS
+        #define STROMX_RASPI_API STROMX_RASPI_HELPER_DLL_EXPORT
+    #else // stromx_raspi_EXPORTS
+        #define STROMX_RASPI_API STROMX_RASPI_HELPER_DLL_IMPORT
+    #endif // stromx_raspi_EXPORTS
+#endif // STROMX_RASPI_STATIC
+
+
 #endif // STROMX_RASPI_CONFIG_H

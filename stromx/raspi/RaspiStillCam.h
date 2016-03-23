@@ -35,7 +35,7 @@ namespace stromx
     {
         struct PARAM_FLOAT_RECT_T;
         
-        class RaspiStillCam : public runtime::OperatorKernel
+        class STROMX_RASPI_API RaspiStillCam : public runtime::OperatorKernel
         {
         public:
             enum InputId
