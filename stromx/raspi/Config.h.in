@@ -25,8 +25,6 @@
 #define STROMX_RASPI_LOCALE_DIR "@LOCALE_DIR@"
 
 #define STROMX_RASPI_PACKAGE_NAME "raspi"
-#define STROMX_RASPI_API
-
 
 #ifdef WIN32
     #define STROMX_RASPI_HELPER_DLL_IMPORT __declspec(dllimport)
