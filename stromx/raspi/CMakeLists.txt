@@ -1,7 +1,3 @@
-set (RASPI_VERSION_MAJOR 0)
-set (RASPI_VERSION_MINOR 1)
-set (RASPI_VERSION_PATCH 0)
-
 configure_file (
     ${CMAKE_CURRENT_SOURCE_DIR}/Config.h.in
     ${CMAKE_CURRENT_BINARY_DIR}/Config.h
@@ -31,7 +27,7 @@ link_directories(/opt/vc/lib)
 
 add_library (stromx_raspi SHARED ${SOURCES})
 
-set(VERSION_STRING "${RASPI_VERSION_MAJOR}.${RASPI_VERSION_MINOR}.${RASPI_VERSION_PATCH}")
+set(VERSION_STRING "${STROMX_RASPI_VERSION_MAJOR}.${STROMX_RASPI_VERSION_MINOR}.${STROMX_RASPI_VERSION_PATCH}")
 
 set_target_properties (stromx_raspi PROPERTIES
     VERSION ${VERSION_STRING}
