@@ -12,14 +12,12 @@ add_executable(stromx_raspi_test
     ../GpioTrigger.cpp
     ../ReadGpio.cpp
     ../Raspi.cpp
-    ../RaspiCam.cpp
     ../RaspiStillCam.cpp
     ../WriteGpio.cpp
     ../impl/Gpio.cpp
     ../impl/Utilities.cpp
     #GpioTriggerTest.cpp
     main.cpp
-    RaspiCamTest.cpp
     RaspiStillCamTest.cpp
     #ReadGpioTest.cpp
     #WriteGpioTest.cpp
