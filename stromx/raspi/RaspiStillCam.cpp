@@ -340,7 +340,8 @@ namespace stromx
                     gain = runtime::data_cast<runtime::Float32>(value);
                     awbGains = {
                         {MMAL_PARAMETER_CUSTOM_AWB_GAINS, sizeof(MMAL_PARAMETER_AWB_GAINS_T)},
-                        {gain * 65536,65536}, {float(m_awbGainBlue) * 65536,65536}
+                        {int32_t(gain * 65536, 65536)}, 
+                        {int32_t(float(m_awbGainBlue) * 65536), 65536}
                     };
                     status = mmal_port_parameter_set(m_cameraComponent->control, &awbGains.hdr);
                     if(status != MMAL_SUCCESS)
@@ -351,7 +352,8 @@ namespace stromx
                     gain = runtime::data_cast<runtime::Float32>(value);
                     awbGains = {
                         {MMAL_PARAMETER_CUSTOM_AWB_GAINS, sizeof(MMAL_PARAMETER_AWB_GAINS_T)},
-                        {float(m_awbGainRed) * 65536,65536}, {gain * 65536,65536}
+                        {int32_t(float(m_awbGainRed) * 65536), 65536}, 
+                        {int32_t(gain * 65536), 65536}
                     };
                     status = mmal_port_parameter_set(m_cameraComponent->control, &awbGains.hdr);
                     if(status != MMAL_SUCCESS)
