@@ -28,13 +28,9 @@ namespace stromx
         class STROMX_RASPI_API WriteGpio : public runtime::OperatorKernel
         {
         public:
-            enum InputId
+            enum DataId
             {
-                INPUT
-            };
-            
-            enum ParameterId
-            {
+                INPUT,
                 GPIO
             };
             

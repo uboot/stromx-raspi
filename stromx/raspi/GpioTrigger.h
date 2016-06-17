@@ -29,13 +29,9 @@ namespace stromx
         class STROMX_RASPI_API GpioTrigger : public runtime::OperatorKernel
         {
         public:
-            enum OutputId
+            enum DataId
             {
-                OUTPUT
-            };
-            
-            enum ParameterId
-            {
+                OUTPUT,
                 GPIO,
                 EDGE,
                 DEBOUNCE_TIME

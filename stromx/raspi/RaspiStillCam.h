@@ -40,18 +40,10 @@ namespace stromx
         class STROMX_RASPI_API RaspiStillCam : public runtime::OperatorKernel
         {
         public:
-            enum InputId
+            enum DataId
             {
-                TRIGGER
-            };
-            
-            enum OutputId
-            {
-                IMAGE
-            };
-
-            enum ParameterId
-            {
+                TRIGGER,
+                IMAGE,
                 NUM_BUFFERS,
                 SHUTTER_SPEED,
                 RESOLUTION,

@@ -28,13 +28,9 @@ namespace stromx
         class STROMX_RASPI_API ReadGpio : public runtime::OperatorKernel
         {
         public:
-            enum OutputId
+            enum DataId
             {
-                OUTPUT
-            };
-            
-            enum ParameterId
-            {
+                OUTPUT,
                 GPIO
             };
             
