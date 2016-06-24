@@ -215,7 +215,7 @@ namespace stromx
         {
             std::vector<const Output*> outputs;
             
-            Description* output = new Output(OUTPUT, Variant::BOOL);
+            Output* output = new Output(OUTPUT, Variant::BOOL);
             output->setTitle("Output");
             outputs.push_back(output);
             

@@ -17,9 +17,9 @@
 #ifndef STROMX_RASPI_READGPIO_H
 #define STROMX_RASPI_READGPIO_H
 
+#include <stromx/runtime/OperatorKernel.h>
+#include <stromx/runtime/Primitive.h>
 #include "stromx/raspi/Config.h"
-#include "stromx/runtime/OperatorKernel.h"
-#include "stromx/runtime/Primitive.h"
 
 namespace stromx
 {

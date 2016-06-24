@@ -17,10 +17,9 @@
 #ifndef STROMX_RASPI_GPIOTRIGGER_H
 #define STROMX_RASPI_GPIOTRIGGER_H
 
+#include <stromx/runtime/OperatorKernel.h>
+#include <stromx/runtime/Primitive.h>
 #include "stromx/raspi/Config.h"
-#include "stromx/runtime/OperatorKernel.h"
-#include "stromx/runtime/Primitive.h"
-#include <boost/graph/graph_concepts.hpp>
 
 namespace stromx
 {

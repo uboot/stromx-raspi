@@ -112,7 +112,7 @@ namespace stromx
             provider.sendOutputData(output);
         }
         
-        const std::vector<const Description*> ReadGpio::setupInputs()
+        const std::vector<const Input*> ReadGpio::setupInputs()
         {
             std::vector<const Input*> inputs;
 
