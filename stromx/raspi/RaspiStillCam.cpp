@@ -242,13 +242,13 @@ namespace stromx
         }
         
         
-        const std::vector< const runtime::Description* > RaspiStillCam::setupInputs()
+        const std::vector< const runtime::Input* > RaspiStillCam::setupInputs()
         {
-            std::vector<const runtime::Description*> inputs;
+            std::vector<const runtime::Input*> inputs;
             
             if (m_hasTriggerInput)
             {
-                runtime::Description* trigger = new runtime::Description(TRIGGER, runtime::Variant::TRIGGER);
+                runtime::Input* trigger = new runtime::Input(TRIGGER, runtime::Variant::TRIGGER);
                 trigger->setTitle(L_("Trigger"));
                 inputs.push_back(trigger);
             }
@@ -256,11 +256,11 @@ namespace stromx
             return inputs;
         }
 
-        const std::vector< const runtime::Description* > RaspiStillCam::setupOutputs()
+        const std::vector< const runtime::Output* > RaspiStillCam::setupOutputs()
         {
-            std::vector<const runtime::Description*> outputs;
+            std::vector<const runtime::Output*> outputs;
 
-            runtime::Description* outputImage = new runtime::Description(IMAGE, runtime::Variant::IMAGE);
+            runtime::Output* outputImage = new runtime::Output(IMAGE, runtime::Variant::IMAGE);
             outputImage->setTitle(L_("Output image"));
             outputs.push_back(outputImage);
 

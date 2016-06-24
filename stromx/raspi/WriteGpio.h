@@ -45,8 +45,8 @@ namespace stromx
             virtual const runtime::OperatorProperties setupProperties();
             
         private:
-            static const std::vector<const runtime::Description*> setupInputs();
-            static const std::vector<const runtime::Description*> setupOutputs();
+            static const std::vector<const runtime::Input*> setupInputs();
+            static const std::vector<const runtime::Output*> setupOutputs();
             static const std::vector<const runtime::Parameter*> setupParameters();
             
             static const std::string TYPE;

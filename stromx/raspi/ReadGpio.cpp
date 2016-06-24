@@ -114,16 +114,16 @@ namespace stromx
         
         const std::vector<const Description*> ReadGpio::setupInputs()
         {
-            std::vector<const Description*> inputs;
+            std::vector<const Input*> inputs;
 
             return inputs;
         }
         
-        const std::vector<const Description*> ReadGpio::setupOutputs()
+        const std::vector<const Output*> ReadGpio::setupOutputs()
         {
-            std::vector<const Description*> outputs;
+            std::vector<const Output*> outputs;
             
-            Description* output = new Description(OUTPUT, Variant::BOOL);
+            Output* output = new Output(OUTPUT, Variant::BOOL);
             output->setTitle("Output");
             outputs.push_back(output);
             

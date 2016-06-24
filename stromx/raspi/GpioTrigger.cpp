@@ -204,18 +204,18 @@ namespace stromx
             }            
         }
         
-        const std::vector<const Description*> GpioTrigger::setupInputs()
+        const std::vector<const Input*> GpioTrigger::setupInputs()
         {
-            std::vector<const Description*> inputs;
+            std::vector<const Input*> inputs;
 
             return inputs;
         }
         
-        const std::vector<const Description*> GpioTrigger::setupOutputs()
+        const std::vector<const Output*> GpioTrigger::setupOutputs()
         {
-            std::vector<const Description*> outputs;
+            std::vector<const Output*> outputs;
             
-            Description* output = new Description(OUTPUT, Variant::BOOL);
+            Description* output = new Output(OUTPUT, Variant::BOOL);
             output->setTitle("Output");
             outputs.push_back(output);
             

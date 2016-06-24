@@ -114,20 +114,20 @@ namespace stromx
             }
         }
         
-        const std::vector<const Description*> WriteGpio::setupInputs()
+        const std::vector<const Input*> WriteGpio::setupInputs()
         {
-            std::vector<const Description*> inputs;
+            std::vector<const Input*> inputs;
             
-            Description* input = new Description(INPUT, Variant::BOOL);
+            Input* input = new Input(INPUT, Variant::BOOL);
             input->setTitle("Input");
             inputs.push_back(input);
 
             return inputs;
         }
         
-        const std::vector<const Description*> WriteGpio::setupOutputs()
+        const std::vector<const Output*> WriteGpio::setupOutputs()
         {
-            std::vector<const Description*> outputs;;
+            std::vector<const Output*> outputs;;
             
             return outputs;
         }

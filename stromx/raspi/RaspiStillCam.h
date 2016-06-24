@@ -78,8 +78,8 @@ namespace stromx
             virtual const runtime::DataRef getParameter(const unsigned int id) const;
 
         private:
-            const std::vector<const runtime::Description*> setupInputs();
-            static const std::vector<const runtime::Description*> setupOutputs();
+            const std::vector<const runtime::Input*> setupInputs();
+            static const std::vector<const runtime::Output*> setupOutputs();
             static const std::vector<const runtime::Parameter*> setupInitParameters();
             static const std::vector<const runtime::Parameter*> setupParameters();
 
