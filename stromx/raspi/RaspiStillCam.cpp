@@ -124,7 +124,7 @@ namespace stromx
         const runtime::Version RaspiStillCam::VERSION(STROMX_RASPI_VERSION_MAJOR,STROMX_RASPI_VERSION_MINOR,STROMX_RASPI_VERSION_PATCH);
 
         RaspiStillCam::RaspiStillCam()
-          : OperatorKernel(TYPE, PACKAGE, VERSION, setupInitParameters()),
+          : OperatorKernel(TYPE, PACKAGE, VERSION),
             m_cameraComponent(0),
             m_previewComponent(0),
             m_previewConnection(0),
@@ -133,24 +133,9 @@ namespace stromx
             m_buffer(0),
             m_numBuffers(1),
             m_resolution(RESOLUTION_1280_BY_960),
-            m_hasTriggerInput(false),
             m_awbGainRed(1.0),
             m_awbGainBlue(1.0)
         {
-        }
-
-        const std::vector<const runtime::Parameter*> RaspiStillCam::setupInitParameters()
-        {
-            using namespace runtime;
-            
-            std::vector<const Parameter*> parameters;
-
-            Parameter* hasTriggerInput = new Parameter(HAS_TRIGGER_INPUT, Variant::BOOL);
-            hasTriggerInput->setTitle(L_("Has trigger input"));
-            hasTriggerInput->setAccessMode(Parameter::NONE_WRITE);
-            parameters.push_back(hasTriggerInput);
-
-            return parameters;
         }
 
         const std::vector<const runtime::Parameter*> RaspiStillCam::setupParameters()
@@ -246,12 +231,9 @@ namespace stromx
         {
             std::vector<const runtime::Input*> inputs;
             
-            if (m_hasTriggerInput)
-            {
-                runtime::Input* trigger = new runtime::Input(TRIGGER, runtime::Variant::TRIGGER);
-                trigger->setTitle(L_("Trigger"));
-                inputs.push_back(trigger);
-            }
+            runtime::Input* trigger = new runtime::Input(TRIGGER, runtime::Variant::TRIGGER);
+            trigger->setTitle(L_("Trigger"));
+            inputs.push_back(trigger);
             
             return inputs;
         }
@@ -360,9 +342,6 @@ namespace stromx
                         throw runtime::ParameterError(parameter(id), *this);
                     m_awbGainBlue = gain;
                     break;
-                case HAS_TRIGGER_INPUT:
-                    m_hasTriggerInput = runtime::data_cast<runtime::Bool>(value);
-                    break;
                 default:
                     throw runtime::WrongParameterId(id,*this);
                 }
@@ -426,8 +405,6 @@ namespace stromx
                 return m_awbGainRed;
             case AWB_GAIN_BLUE:
                 return m_awbGainBlue;
-            case HAS_TRIGGER_INPUT:
-                return m_hasTriggerInput;
             default:
                 throw runtime::WrongParameterId(id,*this);
             }
@@ -661,11 +638,8 @@ namespace stromx
 
         void RaspiStillCam::execute(runtime::DataProvider& provider)
         {
-            if (m_hasTriggerInput)
-            {
-                runtime::Id2DataPair triggerMap(TRIGGER);
-                provider.receiveInputData(triggerMap);
-            }
+            runtime::Id2DataPair triggerMap(TRIGGER);
+            provider.receiveInputData(triggerMap);
             
             MMAL_BUFFER_HEADER_T *buffer = mmal_queue_get(m_outBufferPool->queue);
             

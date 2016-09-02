@@ -74,6 +74,9 @@ namespace stromx
         void RaspiStillCamTest::testExecute()
         {
             m_operator->initialize();
+            m_operator->setConnectorType(RaspiStillCam::TRIGGER, runtime::Description::PARAMETER, 
+                                         runtime::Description::PERSISTENT);
+            m_operator->setParameter(RaspiStillCam::TRIGGER, runtime::TriggerData());
             m_operator->activate();
             
             runtime::DataContainer result = m_operator->getOutputData(RaspiStillCam::IMAGE);
@@ -85,6 +88,9 @@ namespace stromx
         void RaspiStillCamTest::testSetShutterSpeedAndExecute()
         {
             m_operator->initialize();
+            m_operator->setConnectorType(RaspiStillCam::TRIGGER, runtime::Description::PARAMETER, 
+                                         runtime::Description::PERSISTENT);
+            m_operator->setParameter(RaspiStillCam::TRIGGER, runtime::TriggerData());
             m_operator->setParameter(RaspiStillCam::SHUTTER_SPEED, UInt32(200000));
             m_operator->activate();
             
@@ -96,8 +102,8 @@ namespace stromx
 
         void RaspiStillCamTest::testExecuteWithTrigger()
         {
-            m_operator->setParameter(RaspiStillCam::HAS_TRIGGER_INPUT, runtime::Bool(true));
             m_operator->initialize();
+            m_operator->setConnectorType(RaspiStillCam::TRIGGER, runtime::Description::INPUT);
             m_operator->activate();
             m_operator->setInputData(RaspiStillCam::TRIGGER, runtime::DataContainer(new runtime::TriggerData()));
             
@@ -110,6 +116,9 @@ namespace stromx
         void RaspiStillCamTest::testExecuteTwice()
         {
             m_operator->initialize();
+            m_operator->setConnectorType(RaspiStillCam::TRIGGER, runtime::Description::PARAMETER, 
+                                         runtime::Description::PERSISTENT);
+            m_operator->setParameter(RaspiStillCam::TRIGGER, runtime::TriggerData());
             m_operator->activate();
             
             {
@@ -130,6 +139,9 @@ namespace stromx
         void RaspiStillCamTest::testExecuteTwoBuffers()
         {
             m_operator->initialize();
+            m_operator->setConnectorType(RaspiStillCam::TRIGGER, runtime::Description::PARAMETER, 
+                                         runtime::Description::PERSISTENT);
+            m_operator->setParameter(RaspiStillCam::TRIGGER, runtime::TriggerData());
             m_operator->setParameter(RaspiStillCam::NUM_BUFFERS, runtime::UInt32(2));
             m_operator->activate();
             
@@ -190,6 +202,9 @@ namespace stromx
         void RaspiStillCamTest::testFramesPerSecond640()
         {
             m_operator->initialize();
+            m_operator->setConnectorType(RaspiStillCam::TRIGGER, runtime::Description::PARAMETER, 
+                                         runtime::Description::PERSISTENT);
+            m_operator->setParameter(RaspiStillCam::TRIGGER, runtime::TriggerData());
             m_operator->setParameter(RaspiStillCam::SHUTTER_SPEED, UInt32(100));
             m_operator->setParameter(RaspiStillCam::RESOLUTION,
                                      runtime::Enum(RaspiStillCam::RESOLUTION_640_BY_480));
@@ -206,6 +221,9 @@ namespace stromx
         void RaspiStillCamTest::testFramesPerSecond1280()
         {
             m_operator->initialize();
+            m_operator->setConnectorType(RaspiStillCam::TRIGGER, runtime::Description::PARAMETER, 
+                                         runtime::Description::PERSISTENT);
+            m_operator->setParameter(RaspiStillCam::TRIGGER, runtime::TriggerData());
             m_operator->setParameter(RaspiStillCam::SHUTTER_SPEED, UInt32(100));
             m_operator->setParameter(RaspiStillCam::RESOLUTION,
                                      runtime::Enum(RaspiStillCam::RESOLUTION_1280_BY_960));
@@ -222,6 +240,9 @@ namespace stromx
         void RaspiStillCamTest::testFramesPerSecond2560()
         {
             m_operator->initialize();
+            m_operator->setConnectorType(RaspiStillCam::TRIGGER, runtime::Description::PARAMETER, 
+                                         runtime::Description::PERSISTENT);
+            m_operator->setParameter(RaspiStillCam::TRIGGER, runtime::TriggerData());
             m_operator->setParameter(RaspiStillCam::SHUTTER_SPEED, UInt32(100));
             m_operator->setParameter(RaspiStillCam::RESOLUTION,
                                      runtime::Enum(RaspiStillCam::RESOLUTION_2560_BY_1920));
@@ -238,6 +259,9 @@ namespace stromx
         void RaspiStillCamTest::testFramesPerSecondRoi()
         {
             m_operator->initialize();
+            m_operator->setConnectorType(RaspiStillCam::TRIGGER, runtime::Description::PARAMETER, 
+                                         runtime::Description::PERSISTENT);
+            m_operator->setParameter(RaspiStillCam::TRIGGER, runtime::TriggerData());
             m_operator->setParameter(RaspiStillCam::SHUTTER_SPEED, UInt32(100));
             m_operator->setParameter(RaspiStillCam::RESOLUTION,
                                      runtime::Enum(RaspiStillCam::RESOLUTION_2560_BY_1920));
@@ -302,7 +326,10 @@ namespace stromx
 
         void RaspiStillCamTest::testSetRoiAndExecute()
         {
-            m_operator->initialize();             
+            m_operator->initialize();   
+            m_operator->setConnectorType(RaspiStillCam::TRIGGER, runtime::Description::PARAMETER, 
+                                         runtime::Description::PERSISTENT);
+            m_operator->setParameter(RaspiStillCam::TRIGGER, runtime::TriggerData());          
             m_operator->activate();
             
             m_operator->setParameter(RaspiStillCam::LEFT, Float32(0.25));  
@@ -319,6 +346,9 @@ namespace stromx
         void RaspiStillCamTest::testSetAwbModeOffAndExecute()
         {
             m_operator->initialize();
+            m_operator->setConnectorType(RaspiStillCam::TRIGGER, runtime::Description::PARAMETER, 
+                                         runtime::Description::PERSISTENT);
+            m_operator->setParameter(RaspiStillCam::TRIGGER, runtime::TriggerData());
             m_operator->setParameter(RaspiStillCam::AWB_MODE, Enum(MMAL_PARAM_AWBMODE_OFF));
             m_operator->activate();
             
@@ -333,6 +363,9 @@ namespace stromx
         void RaspiStillCamTest::testSetAwbModeSunlightAndExecute()
         {
             m_operator->initialize();
+            m_operator->setConnectorType(RaspiStillCam::TRIGGER, runtime::Description::PARAMETER, 
+                                         runtime::Description::PERSISTENT);
+            m_operator->setParameter(RaspiStillCam::TRIGGER, runtime::TriggerData());
             m_operator->setParameter(RaspiStillCam::AWB_MODE, Enum(MMAL_PARAM_AWBMODE_SUNLIGHT));
             m_operator->activate();
             

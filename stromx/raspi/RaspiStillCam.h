@@ -53,7 +53,6 @@ namespace stromx
                 WIDTH,
                 HEIGHT,
                 AWB_MODE,
-                HAS_TRIGGER_INPUT,
                 AWB_GAIN_GROUP,
                 AWB_GAIN_RED,
                 AWB_GAIN_BLUE
@@ -80,7 +79,6 @@ namespace stromx
         private:
             const std::vector<const runtime::Input*> setupInputs();
             static const std::vector<const runtime::Output*> setupOutputs();
-            static const std::vector<const runtime::Parameter*> setupInitParameters();
             static const std::vector<const runtime::Parameter*> setupParameters();
 
             static const std::string TYPE;
@@ -103,7 +101,6 @@ namespace stromx
             
             runtime::UInt32 m_numBuffers;
             runtime::Enum m_resolution;
-            runtime::Bool m_hasTriggerInput;
             runtime::Float32 m_awbGainRed;
             runtime::Float32 m_awbGainBlue;
         };
