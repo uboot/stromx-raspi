@@ -358,7 +358,6 @@ namespace stromx
             uint32_t value = 0;
             PARAM_FLOAT_RECT_T roi;
             MMAL_PARAMETER_AWBMODE_T awbMode;
-            float gainRed, gainBlue;
 
             switch(id)
             {
